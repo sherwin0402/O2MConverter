@@ -58,3 +58,23 @@ The optimized parameters are saved in *tests/[model_name]/output/data.pckl*, or 
 ## Contributors
 
 [Florian Fischer](https://github.com/fl0fischer), [Miroslav Bachinski](https://bachinski.de/) (analysis and conversion of musculotendon properties)
+
+## RRIS PC
+```
+conda env create --name O2M --file=conda_env.yml
+pip install dm_control (MuJoCo 2.1.3 used)
+```
+```
+conda activate O2M
+export MJLIB_PATH=/home/sherwin/.mujoco/mujoco-2.1.1/lib/libmujoco.so.2.1.1
+python O2MConverter.py sandbox/osim_models/Gait10dof18musc/gait10dof18musc.osim sandbox/converted sandbox/osim_models/Gait10dof18musc/Geometry
+```
+
+After initial conversion, some of the files with lots of muscles take a long time to load (or may not even load)
+- So the easiest initial way is to delete all the muscles
+
+DELETING MUSCLES
+1. You can disable all muscles in the initial OpenSim model, then export the .osim file, then run the converter. There won't be muscles defined here then. But still need to run the muscle converter cause the lower limb got no actuators
+2. Or, you just export all the muscles and run the converter to remove the muscles (current logic does not work well with arm26 and wrist)
+
+3. Or you export both with and without muscles from OpenSim
