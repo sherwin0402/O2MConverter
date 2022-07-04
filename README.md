@@ -61,7 +61,12 @@ The optimized parameters are saved in *tests/[model_name]/output/data.pckl*, or 
 
 ## RRIS PC
 ```
+# If only converting model
 conda env create --name O2M --file=conda_env.yml
+
+# If optimising the converted model's parameters
+conda env create --name O2M --file=conda_env_for_testing.yml
+
 pip install dm_control (MuJoCo 2.1.3 used)
 ```
 ```
