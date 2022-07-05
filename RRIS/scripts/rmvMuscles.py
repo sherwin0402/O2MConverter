@@ -8,8 +8,8 @@ from dm_control import mjcf
 
 class ConvertMusculoskeletalToJointPD():
     def __init__(self):
-        self.mjcf_folder = '/home/sherwin/Desktop/Models/MJCF/O2MConverter/sandbox/generic3.3_converted/wrist_converted/'
-        self.xml_name = 'wrist_converted.xml'
+        self.mjcf_folder = '/home/sherwin/Desktop/O2MConverter/RRIS/data/Sample_Subject/Converted/SN475_Rajagopal_scaled_converted/'
+        self.xml_name = 'SN475_Rajagopal_scaled_converted.xml'
         self.mjcf_file = self.mjcf_folder + self.xml_name
         self.save_path = self.mjcf_folder + 'noMusc_' + self.xml_name
 

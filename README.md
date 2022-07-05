@@ -60,26 +60,78 @@ The optimized parameters are saved in *tests/[model_name]/output/data.pckl*, or 
 [Florian Fischer](https://github.com/fl0fischer), [Miroslav Bachinski](https://bachinski.de/) (analysis and conversion of musculotendon properties)
 
 ## RRIS PC
-```
-# If only converting model
+### Converting Model Only
+```bash
 conda env create --name O2M --file=conda_env.yml
+pip install git+git://github.com/deepmind/dm_control.git
 
-# If optimising the converted model's parameters
-conda env create --name O2M --file=conda_env_for_testing.yml
+```
 
-pip install dm_control (MuJoCo 2.1.3 used)
-```
-```
+**Running**
+```bash
 conda activate O2M
 export MJLIB_PATH=/home/sherwin/.mujoco/mujoco-2.1.1/lib/libmujoco.so.2.1.1
-python O2MConverter.py sandbox/osim_models/Gait10dof18musc/gait10dof18musc.osim sandbox/converted sandbox/osim_models/Gait10dof18musc/Geometry
+
+# python O2MConverter.py OSIM_FILE LOCATION_TO_SAVE LOCATION_WHERE_GEOM_FILES_ARE
+python O2MConverter.py RRIS/data/Sample_Subject/Opensim_Output/SN475/SN475_Rajagopal_scaled.osim RRIS/data/Sample_Subject/Converted RRIS/data/osim_models/Rajagopal2015/Geometry
 ```
 
-After initial conversion, some of the files with lots of muscles take a long time to load (or may not even load)
-- So the easiest initial way is to delete all the muscles
+### Converting model with parameter optimization
+```bash
+conda env create --name O2MTesting --file=conda_env_for_testing.yml
+pip install git+git://github.com/deepmind/dm_control.git
+```
 
-DELETING MUSCLES
-1. You can disable all muscles in the initial OpenSim model, then export the .osim file, then run the converter. There won't be muscles defined here then. But still need to run the muscle converter cause the lower limb got no actuators
-2. Or, you just export all the muscles and run the converter to remove the muscles (current logic does not work well with arm26 and wrist)
+**Running**
+- Model Geometry is same across, so just refer to a single geometry folder located in osim_models
+```bash
+conda activate O2MTesting
 
-3. Or you export both with and without muscles from OpenSim
+# Input True as 4th Argument
+python O2MConverter.py RRIS/data/Sample_Subject/Opensim_Output/SN475/SN475_Rajagopal_scaled.osim RRIS/data/Sample_Subject/Converted_Testing RRIS/data/osim_models/Rajagopal2015/Geometry true
+```
+
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGLEW.so
+
+## Converting the MuJoCo MSK Model to Joint Model
+- This process deletes all muscles, sites and all other info related to muscles
+- And reads all joint information to add actuator for each joint.
+
+Note: 
+- Current logic does not work well with arm26 and wrist
+```bash
+# No need for conda environment for this
+# Just need to change the xml path 
+python rmvMuscles.py
+```
+
+**Discussion Points on OpenSim v3**
+
+1. How is the mass of the subject scaled?
+2. How to extract the joint angle, muscle activation, forces information from OpenSim?
+3. Where to get the geometry files of the model?
+4. Need an OpenSim forward dynamics setup XML file
+5. Need forward dynamics to get initial states (.sto file)
+
+**Sample Run on Parameter Optimization**
+gait10dof18musc
+- First rename the gait10dof18musc in tests as _old
+```bash
+# Step 1 - Convert to MJCF from OSIM - 4th argument is True
+python O2MConverter.py models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim models/converted/gait10dof18musc_for_testing_converted models/opensim/Gait10dof18musc/Geometry true
+# Step 2 - Add OpenSim Forward Dynamics Setup XML File
+# Step 3 - Add OpenSim Initial States File (Run OpenSim Forward Dynamics and use output file with states)
+# Step 4 - Create new template from EnvTemplate Class
+
+# Step 5 - Run tests/generate_controls.py NUM_MUSCLE_EXCITATION_SETS MAX_AMPLITUDE
+python generate_controls.py gait10dof18musc 100 1
+
+# Step 6 - Run tests/run_opensim_simulations.py
+python run_opensim_simulations.py gait10dof18musc
+s
+# Step 7 - Run tests/optimize_mujoco_parameters.py
+python optimize_mujoco_parameters.py gait10dof18musc
+
+# Step 8 - Load optimized parameters
+
+```

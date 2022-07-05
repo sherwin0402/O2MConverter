@@ -1,3 +1,6 @@
+import sys
+sys.path.append('/home/sherwin/Desktop/O2MConverter')
+
 import pickle
 from tests.envs import EnvFactory
 import mujoco_py
@@ -25,7 +28,7 @@ def calculate_joint_errors(env, viewer, sim, data, target_state_indices, initial
         os.makedirs(os.path.join(env.output_folder, run), exist_ok=True)
 
         # Initialise sim
-        Utils.initialise_simulation(sim, timestep, initial_states)
+        Utils.initialise_simulation(sim, initial_states, timestep)
 
         # Run simulation
         qpos = Utils.run_simulation(
@@ -36,7 +39,7 @@ def calculate_joint_errors(env, viewer, sim, data, target_state_indices, initial
         timesteps = np.arange(timestep, (controls.shape[0]+1)*timestep, timestep)
 
         # Calculate joint errors
-        run_err = Utils.estimate_joint_error(states, qpos[:, target_state_indices], plot=True,
+        run_err = Utils.estimate_error(states, qpos[:, target_state_indices], plot=True,
                                              joint_names=env.target_states, timesteps=timesteps,
                                              output_file=os.path.join(env.output_folder, run,
                                                                       "{}.png".format(condition)),
@@ -85,8 +88,11 @@ def main(model_name):
 
     # Load test data
     env = EnvFactory.get(model_name)
+    
     with open(env.data_file, 'rb') as f:
         params, data, train_idxs, test_idxs = pickle.load(f)
+    # with open(env.params_file,'rb') as f:
+    #     params, history = pickle.load(f)
 
     # Create a folder for output figures if it doesn't exist
     output_folder = os.path.join(env.output_folder, '..', 'figures')

@@ -1,3 +1,6 @@
+import sys
+sys.path.append('/home/sherwin/Desktop/O2MConverter')
+
 from tests.envs import EnvFactory
 import mujoco_py
 import os

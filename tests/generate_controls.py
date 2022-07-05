@@ -1,4 +1,6 @@
 import sys
+sys.path.append('/home/sherwin/Desktop/O2MConverter')
+
 import mujoco_py
 import numpy as np
 import math
