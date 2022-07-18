@@ -1,0 +1,160 @@
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079833/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079833/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079379/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079379/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079466/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079466/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079918/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079918/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079586/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079586/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079670/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079670/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079643/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079643/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079561/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079561/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079662/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079662/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079983/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079983/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079639/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079639/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079776/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079776/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079624/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079624/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079906/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079906/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079470/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079470/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079930/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079930/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079403/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079403/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079977/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079977/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079747/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079747/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)
+AbstractTool tool loading model '/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim'
+Updating Model file from 30000 to latest format...
+Loaded model gait10dof18musc.osim from file /home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/gait10dof18musc_for_testing.osim
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079768/controls.sto (nr=500 nc=19)
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/tests/gait10dof18musc/forward_dynamics/run_1656897079768/controls.sto (nr=500 nc=19)
+ControlSetController::extendFinalizeFromProperties 'controls_file' loaded
+and replacing existing ControlSet 'Control Set'.
+Storage: read data file =/home/sherwin/Desktop/O2MConverter/models/opensim/Gait10dof18musc/initial_states.sto (nr=1 nc=57)

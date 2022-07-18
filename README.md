@@ -104,6 +104,7 @@ Note:
 ```bash
 # No need for conda environment for this
 # Just need to change the xml path 
+export MJLIB_PATH=/home/sherwin/.mujoco/mujoco-2.1.1/lib/libmujoco.so.2.1.1
 python rmvMuscles.py
 ```
 
