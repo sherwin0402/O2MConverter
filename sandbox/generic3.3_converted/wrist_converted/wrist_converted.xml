@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="Wrist Model">
+  <compiler inertiafromgeom="auto" angle="radian" balanceinertia="true" boundmass="0.001" boundinertia="0.001">
+    <lengthrange inttotal="500"></lengthrange>
+  </compiler>
+  <default>
+    <joint limited="true" damping="0.5" armature="0.01" stiffness="0"></joint>
+    <geom contype="1" conaffinity="1" condim="3" rgba="0.8 0.6 .4 1" margin="0.001" solref=".02 1" solimp=".8 .8 .01" material="geom"></geom>
+    <site size="0.001"></site>
+    <tendon width="0.001" rgba=".95 .3 .3 1" limited="false"></tendon>
+    <default class="muscle">
+      <muscle ctrllimited="true" ctrlrange="0 1" scale="400"></muscle>
+    </default>
+    <default class="motor">
+      <motor gear="20"></motor>
+    </default>
+  </default>
+  <option timestep="0.002">
+    <flag energy="enable"></flag>
+  </option>
+  <size njmax="1000" nconmax="400" nuser_jnt="1"></size>
+  <visual>
+    <map fogstart="3" fogend="5" force="0.1"></map>
+    <quality shadowsize="2048"></quality>
+  </visual>
+  <worldbody>
+    <geom name="floor" pos="0 0 0" size="10 10 0.125" type="plane" material="MatPlane" condim="3"></geom>
+    <site name="FCR-P1" pos="0.00639 -0.27761 0.01313"></site>
+    <site name="FCU-P1" pos="0.00463 -0.27768 0.01318"></site>
+    <site name="ECU_pre-surgery-P1" pos="0.02268 -0.26804 0.06679"></site>
+    <site name="ECU_post-surgery-P1" pos="0.02268 -0.26804 0.06679"></site>
+    <site name="EDM-P1" pos="0.02257 -0.26792 0.06683"></site>
+    <site name="ECRB-P1" pos="0.02254 -0.26813 0.06679"></site>
+    <site name="ECRL-P1" pos="0.01337 -0.26111 0.07069"></site>
+    <site name="ECRL-P2" pos="0.02239 -0.26834 0.06679"></site>
+    <site name="FDSI-P1" pos="0.0035 -0.29455 0.03226"></site>
+    <site name="FDSM-P1" pos="0.0035 -0.29455 0.03226"></site>
+    <site name="FDSR-P1" pos="0.0035 -0.29455 0.03226"></site>
+    <site name="FDSL-P1" pos="0.0035 -0.29455 0.03226"></site>
+    <site name="EDCL-P1" pos="0.01056 -0.26789 0.07127"></site>
+    <site name="EDCR-P1" pos="0.01011 -0.26789 0.07127"></site>
+    <site name="EDCM-P1" pos="0.01011 -0.26789 0.07127"></site>
+    <site name="EDCI-P1" pos="0.01011 -0.26789 0.07127"></site>
+    <site name="PL-P1" pos="0.00468 -0.27698 0.01316"></site>
+    <body name="ulna" pos="  0.0127  -0.0389   -0.274" quat="0.7071067811865475 0.7071067811865475 0.0 0.0">
+      <light mode="trackcom" directional="false" diffuse=".8 .8 .8" specular="0.3 0.3 0.3" pos="0 0 4.0" dir="0 0 -1"></light>
+      <geom name="ulna" type="mesh" mesh="ulna"></geom>
+      <site name="ECU_pre-surgery-P4" pos="-0.02457 -0.09422 0.03348"></site>
+      <site name="ECU_pre-surgery-P5" pos="-0.02793 -0.23106 0.05873"></site>
+      <site name="ECU_post-surgery-P4" pos="-0.02457 -0.09422 0.03348"></site>
+      <site name="ECU_post-surgery-P5" pos="-0.02463 -0.1364 0.04159"></site>
+      <site name="ECU_post-surgery-P6" pos="-0.02953 -0.18933 0.07846"></site>
+      <site name="EDM-P4" pos="-0.03277 -0.22628 0.07769"></site>
+      <site name="FDPI-P1" pos="-0.0113 -0.03157 0.00208"></site>
+      <site name="FDPM-P1" pos="-0.0113 -0.03157 0.00208"></site>
+      <site name="FDPR-P1" pos="-0.0113 -0.03157 0.00208"></site>
+      <site name="FDPL-P1" pos="-0.0113 -0.03157 0.00208"></site>
+      <site name="EPL-P1" pos="-0.02127 -0.0916 0.03268"></site>
+      <site name="EIP-P1" pos="-0.01974 -0.14668 0.04449"></site>
+      <joint name="elbow_flexion" type="hinge" pos="0 0 0" axis="0.226047  0.19104   0.9552" limited="false" range="       0  2.26893" ref="0" armature="0" damping="0" stiffness="0"></joint>
+      <body name="radius" pos=" -0.0065   -0.008    0.027" quat="1.0 0.0 0.0 0.0">
+        <geom name="radius" type="mesh" mesh="radius"></geom>
+        <site name="FCR-P2" pos="0.00953 -0.21667 0.05024"></site>
+        <site name="ECU_pre-surgery-P2" pos="-0.00239 -0.01019 0.01329"></site>
+        <site name="ECU_pre-surgery-P3" pos="-0.01094 -0.03546 0.01362"></site>
+        <site name="ECU_post-surgery-P2" pos="-0.00239 -0.01019 0.01329"></site>
+        <site name="ECU_post-surgery-P3" pos="-0.01094 -0.03546 0.01362"></site>
+        <site name="ECU_post-surgery-P7" pos="-0.01789 -0.19788 0.06459"></site>
+        <site name="ECU_post-surgery-P8" pos="-0.01779 -0.20954 0.07234"></site>
+        <site name="EDM-P2" pos="-0.00523 -0.01802 0.01357"></site>
+        <site name="EDM-P3" pos="-0.01075 -0.07282 0.01237"></site>
+        <site name="ECRB-P2" pos="-0.00384 -0.1248 0.05482"></site>
+        <site name="ECRB-P3" pos="-0.01733 -0.20892 0.0704"></site>
+        <site name="ECRL-P3" pos="-0.00136 -0.12953 0.05532"></site>
+        <site name="ECRL-P4" pos="-0.0083 -0.21052 0.0752"></site>
+        <site name="EDCL-P2" pos="-0.0082 -0.04004 0.01668"></site>
+        <site name="EDCL-P3" pos="-0.01974 -0.18469 0.04807"></site>
+        <site name="EDCL-P4" pos="-0.02211 -0.21097 0.05287"></site>
+        <site name="EDCR-P2" pos="-0.0082 -0.04004 0.01668"></site>
+        <site name="EDCR-P3" pos="-0.01766 -0.18446 0.04898"></site>
+        <site name="EDCR-P4" pos="-0.02021 -0.21054 0.05596"></site>
+        <site name="EDCM-P2" pos="-0.0082 -0.04004 0.01668"></site>
+        <site name="EDCM-P3" pos="-0.01675 -0.18466 0.04682"></site>
+        <site name="EDCM-P4" pos="-0.01933 -0.21054 0.05152"></site>
+        <site name="EDCI-P2" pos="-0.0082 -0.04004 0.01668"></site>
+        <site name="EDCI-P3" pos="-0.02209 -0.18446 0.04898"></site>
+        <site name="EDCI-P4" pos="-0.02376 -0.21054 0.0533"></site>
+        <site name="FPL-P1" pos="-0.00284 -0.09605 0.02992"></site>
+        <site name="FPL-P2" pos="-0.00166 -0.13532 0.04257"></site>
+        <site name="FPL-P3" pos="-0.00037 -0.16882 0.04439"></site>
+        <site name="APL-P1" pos="-0.00494 -0.09677 0.03004"></site>
+        <site name="APL-P2" pos="-0.00892 -0.13772 0.05255"></site>
+        <site name="APL-P3" pos="-0.0066 -0.15947 0.06132"></site>
+        <site name="APL-P4" pos="-0.00682 -0.17731 0.06462"></site>
+        <site name="APL-P5" pos="-0.00282 -0.20831 0.07607"></site>
+        <site name="EPB-P1" pos="-0.00294 -0.13573 0.04196"></site>
+        <site name="EPB-P2" pos="-0.00701 -0.14896 0.04387"></site>
+        <site name="EPB-P3" pos="-0.01283 -0.17881 0.05817"></site>
+        <site name="EPB-P4" pos="-0.00547 -0.19041 0.06961"></site>
+        <site name="EPB-P5" pos="0.00469 -0.21769 0.0756"></site>
+        <site name="EPL-P2" pos="-0.01652 -0.16952 0.03814"></site>
+        <site name="EPL-P3" pos="-0.01762 -0.20537 0.0523"></site>
+        <site name="EIP-P2" pos="-0.01612 -0.20811 0.05228"></site>
+        <site name="PL-P2" pos="0.01122 -0.20758 0.04487"></site>
+        <joint name="pro_sup" type="hinge" pos="0 0 0" axis="0.056398 0.983577 -0.171449" limited="false" range=" -1.5708   1.5708" ref="0"></joint>
+        <body name="rotaxis" pos=" -0.0085  -0.2313   0.0561" quat="0.9723945590906407 -0.12801798052982447 0.19342126248248717 -0.02546435413798835">
+          <body name="auxprfem" pos="  -0.001    0.009        0" quat="1.0 0.0 0.0 0.0">
+            <joint name="rotaxis_auxprfem_r3" type="hinge" pos="0 0 0" axis="       0        0        1" limited="false" range="-99999.9  99999.9" ref="0"></joint>
+            <body name="auxprrud" pos="       0        0        0" quat="1.0 0.0 0.0 0.0">
+              <joint name="deviation" type="hinge" pos="0 0 0" axis="       1        0        0" limited="false" range="-0.163625 0.305433" ref="0"></joint>
+              <body name="auxdrfem" pos="   0.001    -0.02        0" quat="1.0 0.0 0.0 0.0">
+                <joint name="auxprrud_auxdrfem_r3" type="hinge" pos="0 0 0" axis="       0        0        1" limited="false" range="-99999.9  99999.9" ref="0"></joint>
+                <body name="auxdrrud" pos="       0        0        0" quat="1.0 0.0 0.0 0.0">
+                  <joint name="auxdrfem_auxdrrud_r1" type="hinge" pos="0 0 0" axis="       1        0        0" limited="false" range="-99999.9  99999.9" ref="0"></joint>
+                  <body name="trapezium" pos="  0.0035  -0.0035     0.02" quat="0.9914448866827649 -0.13052599997931214 0.0 0.0">
+                    <geom name="r_trpzm" type="mesh" mesh="r_trpzm"></geom>
+                  </body>
+                  <body name="trapezoid" pos=" -0.0015  -0.0044   0.0134" quat="0.9810602460407203 0.17298746674292034 -0.08583168673729807 -0.015134448791375068">
+                    <geom name="r_trpzd" type="mesh" mesh="r_trpzd"></geom>
+                    <site name="FCR-P3" pos="0.01395 -0.0012 -0.0067"></site>
+                    <site name="ECU_post-surgery-P9" pos="-0.01575 0.00302 0.00216"></site>
+                    <site name="ECRB-P4" pos="-0.01598 0.00257 0.00197"></site>
+                  </body>
+                  <body name="capitate" pos=" -0.0155  -0.0018  -0.0055" quat="0.9961946948320952 0.08715578000562224 0.0 0.0">
+                    <geom name="r_cap" type="mesh" mesh="r_cap"></geom>
+                    <site name="FDSI-P6" pos="0.02944 -0.01143 0.00869"></site>
+                    <site name="FDSM-P6" pos="0.03 -0.0118 0.0084"></site>
+                    <site name="FDSR-P6" pos="0.0289 -0.0155 0.0073"></site>
+                    <site name="FDSL-P6" pos="0.0268 -0.0129 0.0061"></site>
+                  </body>
+                  <body name="hamate" pos="  -0.006   -0.005  -0.0175" quat="0.994521869771278 -0.10452870680651043 0.0 0.0">
+                    <geom name="r_ham" type="mesh" mesh="r_ham"></geom>
+                  </body>
+                  <body name="carp_metacarp" pos="       0        0        0" quat="1.0 0.0 0.0 0.0">
+                    <body name="metacarpal2" pos=" -0.0047  -0.0095   -0.005" quat="0.9876721363317784 0.08641015243142217 0.13002930871704496 0.011376095339210785">
+                      <geom name="fingers1" type="mesh" mesh="fingers1"></geom>
+                      <site name="FCR-P4" pos="0.00592 0.00269 0.01328"></site>
+                      <site name="ECRL-P6" pos="-0.01108 -0.01106 0.02568"></site>
+                      <site name="FDSI-P7" pos="0.01297 -0.01437 0.02183"></site>
+                      <site name="FDSI-P8" pos="0.00543 -0.06688 0.04728"></site>
+                      <site name="FDPI-P6" pos="0.013 -0.0048 0.01072"></site>
+                      <site name="FDPI-P7" pos="0.00363 -0.06662 0.0449"></site>
+                      <site name="EDCI-P8" pos="-0.01225 -0.06926 0.04042"></site>
+                      <site name="EIP-P4" pos="-0.01312 0.00595 0.0075"></site>
+                      <site name="EIP-P5" pos="-0.01022 -0.07179 0.04293"></site>
+                      <body name="Iphalanx1" pos="-0.002402  -0.0685    0.045" quat="1.0 0.0 0.0 0.0">
+                        <geom name="fingers2" type="mesh" mesh="fingers2"></geom>
+                        <site name="FDSI-P9" pos="0.00596 -0.04624 0.00883"></site>
+                        <site name="FDPI-P8" pos="0.00494 -0.0506 0.00914"></site>
+                        <site name="EDCI-P9" pos="-0.00658 -0.04852 0.0044"></site>
+                        <joint name="MCP2_lateral" type="hinge" pos="0 0 0" axis="       1        0        0" limited="false" range="-0.349066 0.349066" ref="0"></joint>
+                        <joint name="MCP2_flex" type="hinge" pos="0 0 0" axis="       0        0        1" limited="false" range="-0.174533   1.5708" ref="0"></joint>
+                        <body name="Iphalanx2" pos="  0.0005 -0.04826  0.00799" quat="1.0 0.0 0.0 0.0">
+                          <geom name="fingers3" type="mesh" mesh="fingers3"></geom>
+                          <site name="FDPI-P9" pos="0.0095 -0.03028 0.00343"></site>
+                          <joint name="PIP_flex" type="hinge" pos="0 0 0" axis="       0        0        1" limited="false" range="-0.0872665   1.5708" ref="0"></joint>
+                          <body name="Iphalanx3" pos=" 0.00193 -0.03277  0.00472" quat="1.0 0.0 0.0 0.0">
+                            <geom name="fingers4" type="mesh" mesh="fingers4"></geom>
+                            <site name="FDSI-P10" pos="0.00581 -0.0059 0.00263"></site>
+                            <site name="EDCI-P10" pos="-0.00291 -0.01043 7e-005"></site>
+                            <site name="EIP-P6" pos="-0.00452 -0.0182 0.00396"></site>
+                            <joint name="DIP_flex" type="hinge" pos="0 0 0" axis="       0        0        1" limited="false" range="-0.0872665   1.5708" ref="0"></joint>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                    <body name="metacarpal3" pos=" -0.0047  -0.0085   -0.005" quat="0.9941334552518194 0.047210127826971246 0.08509454042534627 0.047210127826971246">
+                      <geom name="fingers8" type="mesh" mesh="fingers8"></geom>
+                      <site name="ECU_post-surgery-P10" pos="-0.01502 -0.00464 0.01507"></site>
+                      <site name="ECRB-P5" pos="-0.01528 -0.00506 0.01554"></site>
+                      <site name="FDSM-P7" pos="0.0144 -0.01632 0.01008"></site>
+                      <site name="FDSM-P8" pos="0.00429 -0.08012 0.01596"></site>
+                      <site name="FDSR-P7" pos="0.0144 -0.0252 -0.00101"></site>
+                      <site name="FDPM-P6" pos="0.01168 -0.00745 0.00755"></site>
+                      <site name="FDPM-P7" pos="0.00765 -0.07598 0.01288"></site>
+                      <site name="FDPR-P6" pos="0.01263 -0.0153 0.00166"></site>
+                      <site name="EDCM-P7" pos="-0.01348 -0.07696 0.01108"></site>
+                      <site name="PL-P4" pos="0.00932 -0.02377 0.00981"></site>
+                      <body name="midfinger" pos="       0   -0.003        0" quat="1.0 0.0 0.0 0.0">
+                        <geom name="fingers6" type="mesh" mesh="fingers6"></geom>
+                        <geom name="fingers7" type="mesh" mesh="fingers7"></geom>
+                        <geom name="fingers5" type="mesh" mesh="fingers5"></geom>
+                        <site name="FDSM-P9" pos="-0.00048 -0.12516 0.01851"></site>
+                        <site name="FDSM-P10" pos="0.00028 -0.17254 0.02483"></site>
+                        <site name="FDPM-P8" pos="0.00087 -0.1259 0.01853"></site>
+                        <site name="FDPM-P9" pos="0.00142 -0.16485 0.0224"></site>
+                        <site name="EDCM-P8" pos="-0.01347 -0.13109 0.01966"></site>
+                        <site name="EDCM-P9" pos="-0.00737 -0.17492 0.02576"></site>
+                      </body>
+                    </body>
+                    <body name="metacarpal4" pos=" -0.0047   -0.008  -0.0033" quat="0.9941334552518194 0.047210127826971246 0.08509454042534627 0.047210127826971246">
+                      <geom name="fingers12" type="mesh" mesh="fingers12"></geom>
+                      <site name="FDSR-P8" pos="0.00807 -0.07635 -0.00696"></site>
+                      <site name="FDSL-P7" pos="0.01463 -0.02498 -0.01151"></site>
+                      <site name="FDPR-P7" pos="0.00788 -0.07665 -0.0056"></site>
+                      <site name="FDPL-P6" pos="0.01286 -0.01597 -0.00617"></site>
+                      <site name="EDCR-P7" pos="-0.01378 -0.07606 -0.01001"></site>
+                      <body name="ringfinger" pos="       0  -0.0025        0" quat="1.0 0.0 0.0 0.0">
+                        <geom name="fingers10" type="mesh" mesh="fingers10"></geom>
+                        <geom name="fingers11" type="mesh" mesh="fingers11"></geom>
+                        <geom name="fingers9" type="mesh" mesh="fingers9"></geom>
+                        <site name="FDSR-P9" pos="0.0033 -0.12455 -0.00441"></site>
+                        <site name="FDSR-P10" pos="0.00672 -0.17283 0.00102"></site>
+                        <site name="FDPR-P8" pos="0.00288 -0.12885 -0.0044"></site>
+                        <site name="FDPR-P9" pos="0.00609 -0.15981 -0.0023"></site>
+                        <site name="EDCR-P8" pos="-0.0088 -0.12604 -0.00859"></site>
+                        <site name="EDCR-P9" pos="-0.00093 -0.16987 -0.00249"></site>
+                      </body>
+                    </body>
+                    <body name="metacarpal5" pos="  -0.002    -0.01   0.0035" quat="0.9941334552518194 0.047210127826971246 0.08509454042534627 0.047210127826971246">
+                      <geom name="fingers16" type="mesh" mesh="fingers16"></geom>
+                      <site name="FCU-P6" pos="0.00845 -0.0091 -0.01963"></site>
+                      <site name="ECU_pre-surgery-P7" pos="-0.00458 -0.00734 -0.02848"></site>
+                      <site name="EDM-P6" pos="-0.00895 -0.00546 -0.02267"></site>
+                      <site name="EDM-P7" pos="-0.00709 -0.06329 -0.03424"></site>
+                      <site name="FDSL-P8" pos="0.00674 -0.06152 -0.0347"></site>
+                      <site name="FDPL-P7" pos="0.00655 -0.06359 -0.03689"></site>
+                      <site name="EDCL-P8" pos="-0.00801 -0.06389 -0.03508"></site>
+                      <body name="littlefinger" pos="       0   -0.002        0" quat="1.0 0.0 0.0 0.0">
+                        <geom name="fingers14" type="mesh" mesh="fingers14"></geom>
+                        <geom name="fingers15" type="mesh" mesh="fingers15"></geom>
+                        <geom name="fingers13" type="mesh" mesh="fingers13"></geom>
+                        <site name="EDM-P8" pos="-0.00281 -0.10702 -0.03713"></site>
+                        <site name="EDM-P9" pos="-0.00027 -0.13243 -0.0357"></site>
+                        <site name="FDSL-P9" pos="0.0073 -0.10135 -0.0357"></site>
+                        <site name="FDSL-P10" pos="0.00983 -0.13986 -0.03115"></site>
+                        <site name="FDPL-P8" pos="0.00865 -0.10564 -0.03479"></site>
+                        <site name="FDPL-P9" pos="0.0092 -0.13216 -0.03269"></site>
+                        <site name="EDCL-P9" pos="-0.00303 -0.10372 -0.03765"></site>
+                        <site name="EDCL-P10" pos="0.00129 -0.13957 -0.03333"></site>
+                      </body>
+                    </body>
+                    <body name="thumb" pos="   0.008  -0.0045   0.0219" quat="1.0 0.0 0.0 0.0">
+                      <geom name="fingers17" type="mesh" mesh="fingers17"></geom>
+                      <geom name="fingers18" type="mesh" mesh="fingers18"></geom>
+                      <geom name="fingers19" type="mesh" mesh="fingers19"></geom>
+                      <site name="FPL-P6" pos="0.0063 -0.0177 0.0199"></site>
+                      <site name="FPL-P7" pos="9e-005 -0.04175 0.03446"></site>
+                      <site name="FPL-P8" pos="0.00081 -0.04594 0.03877"></site>
+                      <site name="FPL-P9" pos="0.00577 -0.06923 0.04948"></site>
+                      <site name="FPL-P10" pos="0.00493 -0.07776 0.05542"></site>
+                      <site name="APL-P8" pos="0.00384 0.00196 0.01452"></site>
+                      <site name="APL-P9" pos="0.00816 -0.02324 0.03082"></site>
+                      <site name="EPB-P7" pos="-0.00387 0.00011 0.01647"></site>
+                      <site name="EPB-P8" pos="0.00452 -0.02214 0.03593"></site>
+                      <site name="EPB-P9" pos="0.0073 -0.03012 0.04408"></site>
+                      <site name="EPB-P10" pos="0.00871 -0.03603 0.048"></site>
+                      <site name="EPL-P6" pos="-0.0133 -0.00263 0.01214"></site>
+                      <site name="EPL-P7" pos="-0.00352 -0.03198 0.04462"></site>
+                      <site name="EPL-P8" pos="0.00081 -0.04107 0.05071"></site>
+                      <site name="EPL-P9" pos="0.00966 -0.06693 0.06022"></site>
+                      <site name="EPL-P10" pos="0.01228 -0.07282 0.06269"></site>
+                      <joint name="thumb_abd" type="hinge" pos="0 0 0" axis="       1        0        0" limited="false" range="-0.785398 0.261799" ref="0"></joint>
+                      <joint name="thumb_flex" type="hinge" pos="0 0 0" axis="0.056398 0.983577 -0.171449" limited="false" range="-0.785398   1.5708" ref="0"></joint>
+                    </body>
+                  </body>
+                </body>
+              </body>
+              <body name="scaphoid" pos=" -0.0035  -0.0025    0.009" quat="0.9799246775026643 0.19936806770719273 0.0 0.0">
+                <geom name="r_scaph" type="mesh" mesh="r_scaph"></geom>
+                <site name="EPL-P4" pos="-0.008 0.00038 -0.00774"></site>
+                <site name="EPL-P5" pos="-0.0084 -0.00663 0.00319"></site>
+                <site name="EIP-P3" pos="-0.01119 -0.00448 -0.00483"></site>
+              </body>
+              <body name="lunate" pos="  -0.004  -0.0015   -0.007" quat="1.0 0.0 0.0 0.0">
+                <geom name="r_lun" type="mesh" mesh="r_lun"></geom>
+              </body>
+              <body name="pisiform" pos="   0.005   -0.015  -0.0201" quat="1.0 0.0 0.0 0.0">
+                <geom name="r_pis" type="mesh" mesh="r_pis"></geom>
+              </body>
+              <body name="triquetrum" pos=" -0.0055    -0.01   -0.021" quat="1.0 0.0 0.0 0.0">
+                <geom name="r_triq" type="mesh" mesh="r_triq"></geom>
+                <site name="ECU_pre-surgery-P6" pos="-0.00094 -0.00436 -0.00442"></site>
+              </body>
+            </body>
+          </body>
+          <body name="imagine" pos="       0        0        0" quat="0.7071054825112362 0.0 0.0 0.7071080798594738">
+            <joint name="flexion" type="hinge" pos="0 0 0" axis="-3.67321e-06       -1        0" limited="false" range="   -0.01     0.01" ref="0"></joint>
+          </body>
+        </body>
+      </body>
+    </body>
+    <camera name="for_testing" pos="0 0 0" euler="0 0 0"></camera>
+  </worldbody>
+  <asset>
+    <mesh name="ulna" file="Geometry/ulna.stl" scale="       1        1        1"></mesh>
+    <mesh name="radius" file="Geometry/radius.stl" scale="       1        1        1"></mesh>
+    <mesh name="r_trpzm" file="Geometry/r_trpzm.stl" scale="       1        1        1"></mesh>
+    <mesh name="r_trpzd" file="Geometry/r_trpzd.stl" scale="       1        1        1"></mesh>
+    <mesh name="r_cap" file="Geometry/r_cap.stl" scale="       1        1        1"></mesh>
+    <mesh name="r_ham" file="Geometry/r_ham.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers1" file="Geometry/fingers1.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers2" file="Geometry/fingers2.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers3" file="Geometry/fingers3.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers4" file="Geometry/fingers4.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers8" file="Geometry/fingers8.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers6" file="Geometry/fingers6.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers7" file="Geometry/fingers7.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers5" file="Geometry/fingers5.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers12" file="Geometry/fingers12.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers10" file="Geometry/fingers10.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers11" file="Geometry/fingers11.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers9" file="Geometry/fingers9.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers16" file="Geometry/fingers16.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers14" file="Geometry/fingers14.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers15" file="Geometry/fingers15.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers13" file="Geometry/fingers13.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers17" file="Geometry/fingers17.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers18" file="Geometry/fingers18.stl" scale="       1        1        1"></mesh>
+    <mesh name="fingers19" file="Geometry/fingers19.stl" scale="       1        1        1"></mesh>
+    <mesh name="r_scaph" file="Geometry/r_scaph.stl" scale="       1        1        1"></mesh>
+    <mesh name="r_lun" file="Geometry/r_lun.stl" scale="       1        1        1"></mesh>
+    <mesh name="r_pis" file="Geometry/r_pis.stl" scale="       1        1        1"></mesh>
+    <mesh name="r_triq" file="Geometry/r_triq.stl" scale="       1        1        1"></mesh>
+    <texture name="texplane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2" width="100" height="100"></texture>
+    <texture name="texgeom" type="cube" builtin="flat" mark="cross" width="127" height="1278" rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" markrgb="1 1 1" random="0.01"></texture>
+    <material name="MatPlane" reflectance="0.5" texture="texplane" texrepeat="1 1" texuniform="true"></material>
+    <material name="geom" texture="texgeom" texuniform="true"></material>
+  </asset>
+  <tendon>
+    <spatial name="FCR_tendon" springlength="0.2185" damping="0.05">
+      <site site="FCR-P1"></site>
+      <site site="FCR-P2"></site>
+      <site site="FCR-P3"></site>
+      <site site="FCR-P4"></site>
+    </spatial>
+    <spatial name="FCU_tendon" springlength="0.242" damping="0.05">
+      <site site="FCU-P1"></site>
+      <site site="FCU-P6"></site>
+    </spatial>
+    <spatial name="ECU_pre-surgery_tendon" springlength="0.231" damping="0.05">
+      <site site="ECU_pre-surgery-P1"></site>
+      <site site="ECU_pre-surgery-P2"></site>
+      <site site="ECU_pre-surgery-P3"></site>
+      <site site="ECU_pre-surgery-P4"></site>
+      <site site="ECU_pre-surgery-P5"></site>
+      <site site="ECU_pre-surgery-P6"></site>
+      <site site="ECU_pre-surgery-P7"></site>
+    </spatial>
+    <spatial name="ECU_post-surgery_tendon" springlength="0.231" damping="0.05">
+      <site site="ECU_post-surgery-P1"></site>
+      <site site="ECU_post-surgery-P2"></site>
+      <site site="ECU_post-surgery-P3"></site>
+      <site site="ECU_post-surgery-P4"></site>
+      <site site="ECU_post-surgery-P5"></site>
+      <site site="ECU_post-surgery-P6"></site>
+      <site site="ECU_post-surgery-P7"></site>
+      <site site="ECU_post-surgery-P8"></site>
+      <site site="ECU_post-surgery-P9"></site>
+      <site site="ECU_post-surgery-P10"></site>
+    </spatial>
+    <spatial name="EDM_tendon" springlength="0.347" damping="0.05">
+      <site site="EDM-P1"></site>
+      <site site="EDM-P2"></site>
+      <site site="EDM-P3"></site>
+      <site site="EDM-P4"></site>
+      <site site="EDM-P6"></site>
+      <site site="EDM-P7"></site>
+      <site site="EDM-P8"></site>
+      <site site="EDM-P9"></site>
+    </spatial>
+    <spatial name="ECRB_tendon" springlength="0.2205" damping="0.05">
+      <site site="ECRB-P1"></site>
+      <site site="ECRB-P2"></site>
+      <site site="ECRB-P3"></site>
+      <site site="ECRB-P4"></site>
+      <site site="ECRB-P5"></site>
+    </spatial>
+    <spatial name="ECRL_tendon" springlength="0.2026" damping="0.05">
+      <site site="ECRL-P1"></site>
+      <site site="ECRL-P2"></site>
+      <site site="ECRL-P3"></site>
+      <site site="ECRL-P4"></site>
+      <site site="ECRL-P6"></site>
+    </spatial>
+    <spatial name="FDSI_tendon" springlength="0.338" damping="0.05">
+      <site site="FDSI-P1"></site>
+      <site site="FDSI-P6"></site>
+      <site site="FDSI-P7"></site>
+      <site site="FDSI-P8"></site>
+      <site site="FDSI-P9"></site>
+      <site site="FDSI-P10"></site>
+    </spatial>
+    <spatial name="FDSM_tendon" springlength="0.354" damping="0.05">
+      <site site="FDSM-P1"></site>
+      <site site="FDSM-P6"></site>
+      <site site="FDSM-P7"></site>
+      <site site="FDSM-P8"></site>
+      <site site="FDSM-P9"></site>
+      <site site="FDSM-P10"></site>
+    </spatial>
+    <spatial name="FDSR_tendon" springlength="0.3535" damping="0.05">
+      <site site="FDSR-P1"></site>
+      <site site="FDSR-P6"></site>
+      <site site="FDSR-P7"></site>
+      <site site="FDSR-P8"></site>
+      <site site="FDSR-P9"></site>
+      <site site="FDSR-P10"></site>
+    </spatial>
+    <spatial name="FDSL_tendon" springlength="0.343" damping="0.05">
+      <site site="FDSL-P1"></site>
+      <site site="FDSL-P6"></site>
+      <site site="FDSL-P7"></site>
+      <site site="FDSL-P8"></site>
+      <site site="FDSL-P9"></site>
+      <site site="FDSL-P10"></site>
+    </spatial>
+    <spatial name="FDPI_tendon" springlength="0.322" damping="0.05">
+      <site site="FDPI-P1"></site>
+      <site site="FDPI-P6"></site>
+      <site site="FDPI-P7"></site>
+      <site site="FDPI-P8"></site>
+      <site site="FDPI-P9"></site>
+    </spatial>
+    <spatial name="FDPM_tendon" springlength="0.32" damping="0.05">
+      <site site="FDPM-P1"></site>
+      <site site="FDPM-P6"></site>
+      <site site="FDPM-P7"></site>
+      <site site="FDPM-P8"></site>
+      <site site="FDPM-P9"></site>
+    </spatial>
+    <spatial name="FDPR_tendon" springlength="0.314" damping="0.05">
+      <site site="FDPR-P1"></site>
+      <site site="FDPR-P6"></site>
+      <site site="FDPR-P7"></site>
+      <site site="FDPR-P8"></site>
+      <site site="FDPR-P9"></site>
+    </spatial>
+    <spatial name="FDPL_tendon" springlength="0.3036" damping="0.05">
+      <site site="FDPL-P1"></site>
+      <site site="FDPL-P6"></site>
+      <site site="FDPL-P7"></site>
+      <site site="FDPL-P8"></site>
+      <site site="FDPL-P9"></site>
+    </spatial>
+    <spatial name="EDCL_tendon" springlength="0.3495" damping="0.05">
+      <site site="EDCL-P1"></site>
+      <site site="EDCL-P2"></site>
+      <site site="EDCL-P3"></site>
+      <site site="EDCL-P4"></site>
+      <site site="EDCL-P8"></site>
+      <site site="EDCL-P9"></site>
+      <site site="EDCL-P10"></site>
+    </spatial>
+    <spatial name="EDCR_tendon" springlength="0.39" damping="0.05">
+      <site site="EDCR-P1"></site>
+      <site site="EDCR-P2"></site>
+      <site site="EDCR-P3"></site>
+      <site site="EDCR-P4"></site>
+      <site site="EDCR-P7"></site>
+      <site site="EDCR-P8"></site>
+      <site site="EDCR-P9"></site>
+    </spatial>
+    <spatial name="EDCM_tendon" springlength="0.39" damping="0.05">
+      <site site="EDCM-P1"></site>
+      <site site="EDCM-P2"></site>
+      <site site="EDCM-P3"></site>
+      <site site="EDCM-P4"></site>
+      <site site="EDCM-P7"></site>
+      <site site="EDCM-P8"></site>
+      <site site="EDCM-P9"></site>
+    </spatial>
+    <spatial name="EDCI_tendon" springlength="0.385" damping="0.05">
+      <site site="EDCI-P1"></site>
+      <site site="EDCI-P2"></site>
+      <site site="EDCI-P3"></site>
+      <site site="EDCI-P4"></site>
+      <site site="EDCI-P8"></site>
+      <site site="EDCI-P9"></site>
+      <site site="EDCI-P10"></site>
+    </spatial>
+    <spatial name="FPL_tendon" springlength="0.1988" damping="0.05">
+      <site site="FPL-P1"></site>
+      <site site="FPL-P2"></site>
+      <site site="FPL-P3"></site>
+      <site site="FPL-P6"></site>
+      <site site="FPL-P7"></site>
+      <site site="FPL-P8"></site>
+      <site site="FPL-P9"></site>
+      <site site="FPL-P10"></site>
+    </spatial>
+    <spatial name="APL_tendon" springlength="0.125" damping="0.05">
+      <site site="APL-P1"></site>
+      <site site="APL-P2"></site>
+      <site site="APL-P3"></site>
+      <site site="APL-P4"></site>
+      <site site="APL-P5"></site>
+      <site site="APL-P8"></site>
+      <site site="APL-P9"></site>
+    </spatial>
+    <spatial name="EPB_tendon" springlength="0.11" damping="0.05">
+      <site site="EPB-P1"></site>
+      <site site="EPB-P2"></site>
+      <site site="EPB-P3"></site>
+      <site site="EPB-P4"></site>
+      <site site="EPB-P5"></site>
+      <site site="EPB-P7"></site>
+      <site site="EPB-P8"></site>
+      <site site="EPB-P9"></site>
+      <site site="EPB-P10"></site>
+    </spatial>
+    <spatial name="EPL_tendon" springlength="0.22" damping="0.05">
+      <site site="EPL-P1"></site>
+      <site site="EPL-P2"></site>
+      <site site="EPL-P3"></site>
+      <site site="EPL-P4"></site>
+      <site site="EPL-P5"></site>
+      <site site="EPL-P6"></site>
+      <site site="EPL-P7"></site>
+      <site site="EPL-P8"></site>
+      <site site="EPL-P9"></site>
+      <site site="EPL-P10"></site>
+    </spatial>
+    <spatial name="EIP_tendon" springlength="0.24804" damping="0.05">
+      <site site="EIP-P1"></site>
+      <site site="EIP-P2"></site>
+      <site site="EIP-P3"></site>
+      <site site="EIP-P4"></site>
+      <site site="EIP-P5"></site>
+      <site site="EIP-P6"></site>
+    </spatial>
+    <spatial name="PL_tendon" springlength="0.236" damping="0.05">
+      <site site="PL-P1"></site>
+      <site site="PL-P2"></site>
+      <site site="PL-P4"></site>
+    </spatial>
+  </tendon>
+  <actuator>
+    <muscle name="FCR" tendon="FCR_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="FCU" tendon="FCU_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="ECU_pre-surgery" tendon="ECU_pre-surgery_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="ECU_post-surgery" tendon="ECU_post-surgery_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="EDM" tendon="EDM_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="ECRB" tendon="ECRB_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="ECRL" tendon="ECRL_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="FDSI" tendon="FDSI_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="FDSM" tendon="FDSM_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="FDSR" tendon="FDSR_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="FDSL" tendon="FDSL_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="FDPI" tendon="FDPI_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="FDPM" tendon="FDPM_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="FDPR" tendon="FDPR_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="FDPL" tendon="FDPL_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="EDCL" tendon="EDCL_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="EDCR" tendon="EDCR_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="EDCM" tendon="EDCM_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="EDCI" tendon="EDCI_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="FPL" tendon="FPL_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="APL" tendon="APL_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="EPB" tendon="EPB_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="EPL" tendon="EPL_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="EIP" tendon="EIP_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+    <muscle name="PL" tendon="PL_tendon" class="muscle" timeconst="  0.7667 0.145985" ctrllimited="true" ctrlrange="    0.01        1"></muscle>
+  </actuator>
+  <equality>
+    <joint name="rotaxis_auxprfem_r3_con" joint1="rotaxis_auxprfem_r3" joint2="flexion" active="true" polycoef="       0 0.499999        0        0        0" solimp="0.9999 0.9999 0.001 0.5 2"></joint>
+    <joint name="auxprrud_auxdrfem_r3_con" joint1="auxprrud_auxdrfem_r3" joint2="flexion" active="true" polycoef="       0      0.5        0        0        0" solimp="0.9999 0.9999 0.001 0.5 2"></joint>
+    <joint name="auxdrfem_auxdrrud_r1_con" joint1="auxdrfem_auxdrrud_r1" joint2="deviation" active="true" polycoef="-1.38778e-17 0.572918 -0.119367        0        0" solimp="0.9999 0.9999 0.001 0.5 2"></joint>
+    <weld name="origin_to_worldbody" body1="ulna" active="false"></weld>
+  </equality>
+</mujoco>

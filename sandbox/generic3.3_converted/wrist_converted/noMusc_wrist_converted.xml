@@ -1,0 +1,179 @@
+<mujoco model="Wrist Model">
+  <compiler inertiafromgeom="auto" angle="radian" balanceinertia="true" boundmass="0.001" boundinertia="0.001">
+    <lengthrange inttotal="500" />
+  </compiler>
+  <default>
+    <joint limited="true" damping="0.5" armature="0.01" stiffness="0" />
+    <geom contype="1" conaffinity="1" condim="3" rgba="0.8 0.6 .4 1" margin="0.001" solref=".02 1" solimp=".8 .8 .01" material="geom" />
+    <default class="motor">
+      <motor gear="20" />
+    </default>
+  </default>
+  <option timestep="0.002">
+    <flag energy="enable" />
+  </option>
+  <size njmax="1000" nconmax="400" nuser_jnt="1" />
+  <visual>
+    <map fogstart="3" fogend="5" force="0.1" />
+    <quality shadowsize="2048" />
+  </visual>
+  <worldbody>
+    <geom name="floor" pos="0 0 0" size="10 10 0.125" type="plane" material="MatPlane" condim="3" />
+    <body name="ulna" pos="  0.0127  -0.0389   -0.274" quat="0.7071067811865475 0.7071067811865475 0.0 0.0">
+      <light mode="trackcom" directional="false" diffuse=".8 .8 .8" specular="0.3 0.3 0.3" pos="0 0 4.0" dir="0 0 -1" />
+      <geom name="ulna" type="mesh" mesh="ulna" />
+      <joint name="elbow_flexion" type="hinge" pos="0 0 0" axis="0.226047  0.19104   0.9552" limited="false" range="       0  2.26893" ref="0" armature="0" damping="0" stiffness="0" />
+      <body name="radius" pos=" -0.0065   -0.008    0.027" quat="1.0 0.0 0.0 0.0">
+        <geom name="radius" type="mesh" mesh="radius" />
+        <joint name="pro_sup" type="hinge" pos="0 0 0" axis="0.056398 0.983577 -0.171449" limited="false" range=" -1.5708   1.5708" ref="0" />
+        <body name="rotaxis" pos=" -0.0085  -0.2313   0.0561" quat="0.9723945590906407 -0.12801798052982447 0.19342126248248717 -0.02546435413798835">
+          <body name="auxprfem" pos="  -0.001    0.009        0" quat="1.0 0.0 0.0 0.0">
+            <joint name="rotaxis_auxprfem_r3" type="hinge" pos="0 0 0" axis="       0        0        1" limited="false" range="-99999.9  99999.9" ref="0" />
+            <body name="auxprrud" pos="       0        0        0" quat="1.0 0.0 0.0 0.0">
+              <joint name="deviation" type="hinge" pos="0 0 0" axis="       1        0        0" limited="false" range="-0.163625 0.305433" ref="0" />
+              <body name="auxdrfem" pos="   0.001    -0.02        0" quat="1.0 0.0 0.0 0.0">
+                <joint name="auxprrud_auxdrfem_r3" type="hinge" pos="0 0 0" axis="       0        0        1" limited="false" range="-99999.9  99999.9" ref="0" />
+                <body name="auxdrrud" pos="       0        0        0" quat="1.0 0.0 0.0 0.0">
+                  <joint name="auxdrfem_auxdrrud_r1" type="hinge" pos="0 0 0" axis="       1        0        0" limited="false" range="-99999.9  99999.9" ref="0" />
+                  <body name="trapezium" pos="  0.0035  -0.0035     0.02" quat="0.9914448866827649 -0.13052599997931214 0.0 0.0">
+                    <geom name="r_trpzm" type="mesh" mesh="r_trpzm" />
+                  </body>
+                  <body name="trapezoid" pos=" -0.0015  -0.0044   0.0134" quat="0.9810602460407203 0.17298746674292034 -0.08583168673729807 -0.015134448791375068">
+                    <geom name="r_trpzd" type="mesh" mesh="r_trpzd" />
+                  </body>
+                  <body name="capitate" pos=" -0.0155  -0.0018  -0.0055" quat="0.9961946948320952 0.08715578000562224 0.0 0.0">
+                    <geom name="r_cap" type="mesh" mesh="r_cap" />
+                  </body>
+                  <body name="hamate" pos="  -0.006   -0.005  -0.0175" quat="0.994521869771278 -0.10452870680651043 0.0 0.0">
+                    <geom name="r_ham" type="mesh" mesh="r_ham" />
+                  </body>
+                  <body name="carp_metacarp" pos="       0        0        0" quat="1.0 0.0 0.0 0.0">
+                    <body name="metacarpal2" pos=" -0.0047  -0.0095   -0.005" quat="0.9876721363317784 0.08641015243142217 0.13002930871704496 0.011376095339210785">
+                      <geom name="fingers1" type="mesh" mesh="fingers1" />
+                      <body name="Iphalanx1" pos="-0.002402  -0.0685    0.045" quat="1.0 0.0 0.0 0.0">
+                        <geom name="fingers2" type="mesh" mesh="fingers2" />
+                        <joint name="MCP2_lateral" type="hinge" pos="0 0 0" axis="       1        0        0" limited="false" range="-0.349066 0.349066" ref="0" />
+                        <joint name="MCP2_flex" type="hinge" pos="0 0 0" axis="       0        0        1" limited="false" range="-0.174533   1.5708" ref="0" />
+                        <body name="Iphalanx2" pos="  0.0005 -0.04826  0.00799" quat="1.0 0.0 0.0 0.0">
+                          <geom name="fingers3" type="mesh" mesh="fingers3" />
+                          <joint name="PIP_flex" type="hinge" pos="0 0 0" axis="       0        0        1" limited="false" range="-0.0872665   1.5708" ref="0" />
+                          <body name="Iphalanx3" pos=" 0.00193 -0.03277  0.00472" quat="1.0 0.0 0.0 0.0">
+                            <geom name="fingers4" type="mesh" mesh="fingers4" />
+                            <joint name="DIP_flex" type="hinge" pos="0 0 0" axis="       0        0        1" limited="false" range="-0.0872665   1.5708" ref="0" />
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                    <body name="metacarpal3" pos=" -0.0047  -0.0085   -0.005" quat="0.9941334552518194 0.047210127826971246 0.08509454042534627 0.047210127826971246">
+                      <geom name="fingers8" type="mesh" mesh="fingers8" />
+                      <body name="midfinger" pos="       0   -0.003        0" quat="1.0 0.0 0.0 0.0">
+                        <geom name="fingers6" type="mesh" mesh="fingers6" />
+                        <geom name="fingers7" type="mesh" mesh="fingers7" />
+                        <geom name="fingers5" type="mesh" mesh="fingers5" />
+                      </body>
+                    </body>
+                    <body name="metacarpal4" pos=" -0.0047   -0.008  -0.0033" quat="0.9941334552518194 0.047210127826971246 0.08509454042534627 0.047210127826971246">
+                      <geom name="fingers12" type="mesh" mesh="fingers12" />
+                      <body name="ringfinger" pos="       0  -0.0025        0" quat="1.0 0.0 0.0 0.0">
+                        <geom name="fingers10" type="mesh" mesh="fingers10" />
+                        <geom name="fingers11" type="mesh" mesh="fingers11" />
+                        <geom name="fingers9" type="mesh" mesh="fingers9" />
+                      </body>
+                    </body>
+                    <body name="metacarpal5" pos="  -0.002    -0.01   0.0035" quat="0.9941334552518194 0.047210127826971246 0.08509454042534627 0.047210127826971246">
+                      <geom name="fingers16" type="mesh" mesh="fingers16" />
+                      <body name="littlefinger" pos="       0   -0.002        0" quat="1.0 0.0 0.0 0.0">
+                        <geom name="fingers14" type="mesh" mesh="fingers14" />
+                        <geom name="fingers15" type="mesh" mesh="fingers15" />
+                        <geom name="fingers13" type="mesh" mesh="fingers13" />
+                      </body>
+                    </body>
+                    <body name="thumb" pos="   0.008  -0.0045   0.0219" quat="1.0 0.0 0.0 0.0">
+                      <geom name="fingers17" type="mesh" mesh="fingers17" />
+                      <geom name="fingers18" type="mesh" mesh="fingers18" />
+                      <geom name="fingers19" type="mesh" mesh="fingers19" />
+                      <joint name="thumb_abd" type="hinge" pos="0 0 0" axis="       1        0        0" limited="false" range="-0.785398 0.261799" ref="0" />
+                      <joint name="thumb_flex" type="hinge" pos="0 0 0" axis="0.056398 0.983577 -0.171449" limited="false" range="-0.785398   1.5708" ref="0" />
+                    </body>
+                  </body>
+                </body>
+              </body>
+              <body name="scaphoid" pos=" -0.0035  -0.0025    0.009" quat="0.9799246775026643 0.19936806770719273 0.0 0.0">
+                <geom name="r_scaph" type="mesh" mesh="r_scaph" />
+                </body>
+              <body name="lunate" pos="  -0.004  -0.0015   -0.007" quat="1.0 0.0 0.0 0.0">
+                <geom name="r_lun" type="mesh" mesh="r_lun" />
+              </body>
+              <body name="pisiform" pos="   0.005   -0.015  -0.0201" quat="1.0 0.0 0.0 0.0">
+                <geom name="r_pis" type="mesh" mesh="r_pis" />
+              </body>
+              <body name="triquetrum" pos=" -0.0055    -0.01   -0.021" quat="1.0 0.0 0.0 0.0">
+                <geom name="r_triq" type="mesh" mesh="r_triq" />
+                </body>
+            </body>
+          </body>
+          <body name="imagine" pos="       0        0        0" quat="0.7071054825112362 0.0 0.0 0.7071080798594738">
+            <joint name="flexion" type="hinge" pos="0 0 0" axis="-3.67321e-06       -1        0" limited="false" range="   -0.01     0.01" ref="0" />
+          </body>
+        </body>
+      </body>
+    </body>
+    <camera name="for_testing" pos="0 0 0" euler="0 0 0" />
+  </worldbody>
+  <asset>
+    <mesh name="ulna" file="Geometry/ulna.stl" scale="       1        1        1" />
+    <mesh name="radius" file="Geometry/radius.stl" scale="       1        1        1" />
+    <mesh name="r_trpzm" file="Geometry/r_trpzm.stl" scale="       1        1        1" />
+    <mesh name="r_trpzd" file="Geometry/r_trpzd.stl" scale="       1        1        1" />
+    <mesh name="r_cap" file="Geometry/r_cap.stl" scale="       1        1        1" />
+    <mesh name="r_ham" file="Geometry/r_ham.stl" scale="       1        1        1" />
+    <mesh name="fingers1" file="Geometry/fingers1.stl" scale="       1        1        1" />
+    <mesh name="fingers2" file="Geometry/fingers2.stl" scale="       1        1        1" />
+    <mesh name="fingers3" file="Geometry/fingers3.stl" scale="       1        1        1" />
+    <mesh name="fingers4" file="Geometry/fingers4.stl" scale="       1        1        1" />
+    <mesh name="fingers8" file="Geometry/fingers8.stl" scale="       1        1        1" />
+    <mesh name="fingers6" file="Geometry/fingers6.stl" scale="       1        1        1" />
+    <mesh name="fingers7" file="Geometry/fingers7.stl" scale="       1        1        1" />
+    <mesh name="fingers5" file="Geometry/fingers5.stl" scale="       1        1        1" />
+    <mesh name="fingers12" file="Geometry/fingers12.stl" scale="       1        1        1" />
+    <mesh name="fingers10" file="Geometry/fingers10.stl" scale="       1        1        1" />
+    <mesh name="fingers11" file="Geometry/fingers11.stl" scale="       1        1        1" />
+    <mesh name="fingers9" file="Geometry/fingers9.stl" scale="       1        1        1" />
+    <mesh name="fingers16" file="Geometry/fingers16.stl" scale="       1        1        1" />
+    <mesh name="fingers14" file="Geometry/fingers14.stl" scale="       1        1        1" />
+    <mesh name="fingers15" file="Geometry/fingers15.stl" scale="       1        1        1" />
+    <mesh name="fingers13" file="Geometry/fingers13.stl" scale="       1        1        1" />
+    <mesh name="fingers17" file="Geometry/fingers17.stl" scale="       1        1        1" />
+    <mesh name="fingers18" file="Geometry/fingers18.stl" scale="       1        1        1" />
+    <mesh name="fingers19" file="Geometry/fingers19.stl" scale="       1        1        1" />
+    <mesh name="r_scaph" file="Geometry/r_scaph.stl" scale="       1        1        1" />
+    <mesh name="r_lun" file="Geometry/r_lun.stl" scale="       1        1        1" />
+    <mesh name="r_pis" file="Geometry/r_pis.stl" scale="       1        1        1" />
+    <mesh name="r_triq" file="Geometry/r_triq.stl" scale="       1        1        1" />
+    <texture name="texplane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2" width="100" height="100" />
+    <texture name="texgeom" type="cube" builtin="flat" mark="cross" width="127" height="1278" rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" markrgb="1 1 1" random="0.01" />
+    <material name="MatPlane" reflectance="0.5" texture="texplane" texrepeat="1 1" texuniform="true" />
+    <material name="geom" texture="texgeom" texuniform="true" />
+  </asset>
+  <actuator>
+    <motor name="thumb_flex" joint="thumb_flex" class="motor" />
+		<motor name="flexion" joint="flexion" class="motor" />
+		<motor name="MCP2_flex" joint="MCP2_flex" class="motor" />
+		<motor name="PIP_flex" joint="PIP_flex" class="motor" />
+		<motor name="pro_sup" joint="pro_sup" class="motor" />
+		<motor name="MCP2_lateral" joint="MCP2_lateral" class="motor" />
+		<motor name="DIP_flex" joint="DIP_flex" class="motor" />
+		<motor name="deviation" joint="deviation" class="motor" />
+		<motor name="rotaxis_auxprfem_r3" joint="rotaxis_auxprfem_r3" class="motor" />
+		<motor name="thumb_abd" joint="thumb_abd" class="motor" />
+		<motor name="auxdrfem_auxdrrud_r1" joint="auxdrfem_auxdrrud_r1" class="motor" />
+		<motor name="auxprrud_auxdrfem_r3" joint="auxprrud_auxdrfem_r3" class="motor" />
+		<motor name="elbow_flexion" joint="elbow_flexion" class="motor" />
+		</actuator>
+  <equality>
+    <joint name="rotaxis_auxprfem_r3_con" joint1="rotaxis_auxprfem_r3" joint2="flexion" active="true" polycoef="       0 0.499999        0        0        0" solimp="0.9999 0.9999 0.001 0.5 2" />
+    <joint name="auxprrud_auxdrfem_r3_con" joint1="auxprrud_auxdrfem_r3" joint2="flexion" active="true" polycoef="       0      0.5        0        0        0" solimp="0.9999 0.9999 0.001 0.5 2" />
+    <joint name="auxdrfem_auxdrrud_r1_con" joint1="auxdrfem_auxdrrud_r1" joint2="deviation" active="true" polycoef="-1.38778e-17 0.572918 -0.119367        0        0" solimp="0.9999 0.9999 0.001 0.5 2" />
+    <weld name="origin_to_worldbody" body1="ulna" active="false" />
+  </equality>
+</mujoco>

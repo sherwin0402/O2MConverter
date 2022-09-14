@@ -61,7 +61,7 @@ The optimized parameters are saved in *tests/[model_name]/output/data.pckl*, or 
 
 [Florian Fischer](https://github.com/fl0fischer), [Miroslav Bachinski](https://bachinski.de/) (analysis and conversion of musculotendon properties)
 
-## RRIS PC
+## RRIS
 ### Converting Model Only
 ```bash
 conda env create --name O2M --file=conda_env.yml
@@ -70,15 +70,40 @@ pip install git+git://github.com/deepmind/dm_control.git
 ```
 
 **Running**
+
 ```bash
 conda activate O2M
 export MJLIB_PATH=/home/sherwin/.mujoco/mujoco-2.1.1/lib/libmujoco.so.2.1.1
+conda env export | grep -v "^prefix: " > environment.yml
 
-# python O2MConverter.py OSIM_FILE LOCATION_TO_SAVE LOCATION_WHERE_GEOM_FILES_ARE
+# python O2MConverter.py <OSIM_FILE> <LOCATION_TO_SAVE> <LOCATION_WHERE_GEOM_FILES_ARE>
 python O2MConverter.py RRIS/data/Sample_Subject/Opensim_Output/SN475/SN475_Rajagopal_scaled.osim RRIS/data/Sample_Subject/Converted RRIS/data/osim_models/Rajagopal2015/Geometry
+
+# MSK to Joint Model
+# - This process deletes all muscles, sites and all other info related to muscles
+# - And reads all joint information to add actuator for each joint.
+# - Current logic does not work well with arm26 and wrist
+export MJLIB_PATH=/home/sherwin/.mujoco/mujoco-2.1.1/lib/libmujoco.so.2.1.1
+cd scripts
+python rmvMuscles.py
 ```
 
-### Converting model with parameter optimization
+### Preparing motions
+- Just need to store the motion accordingly in the appropriate folder
+```bash
+cd scripts
+python prep_motion.py
+```
+
+### Playing Scaled Model & Motion
+```bash
+conda activate O2M
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGLEW.so
+cd scripts
+python play_RRISHealthy.py
+```
+
+## Converting model with parameter optimization
 ```bash
 conda env create --name O2MTesting --file=conda_env_for_testing.yml
 pip install git+git://github.com/deepmind/dm_control.git
@@ -93,30 +118,8 @@ conda activate O2MTesting
 python O2MConverter.py RRIS/data/Sample_Subject/Opensim_Output/SN475/SN475_Rajagopal_scaled.osim RRIS/data/Sample_Subject/Converted_Testing RRIS/data/osim_models/Rajagopal2015/Geometry true
 ```
 
-export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libGLEW.so
-
-## Converting the MuJoCo MSK Model to Joint Model
-- This process deletes all muscles, sites and all other info related to muscles
-- And reads all joint information to add actuator for each joint.
-
-Note: 
-- Current logic does not work well with arm26 and wrist
-```bash
-# No need for conda environment for this
-# Just need to change the xml path 
-export MJLIB_PATH=/home/sherwin/.mujoco/mujoco-2.1.1/lib/libmujoco.so.2.1.1
-python rmvMuscles.py
-```
-
-**Discussion Points on OpenSim v3**
-
-1. How is the mass of the subject scaled?
-2. How to extract the joint angle, muscle activation, forces information from OpenSim?
-3. Where to get the geometry files of the model?
-4. Need an OpenSim forward dynamics setup XML file
-5. Need forward dynamics to get initial states (.sto file)
-
 **Sample Run on Parameter Optimization**
+
 gait10dof18musc
 - First rename the gait10dof18musc in tests as _old
 ```bash

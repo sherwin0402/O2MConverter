@@ -1,0 +1,142 @@
+<mujoco model="gait10dof18musc.osim">
+  <compiler inertiafromgeom="auto" angle="radian" balanceinertia="true" boundmass="0.001" boundinertia="0.001">
+    <lengthrange inttotal="500" />
+  </compiler>
+  <default>
+    <joint limited="true" damping="0.5" armature="0.01" stiffness="0" />
+    <geom contype="1" conaffinity="1" condim="3" rgba="0.8 0.6 .4 1" margin="0.001" solref=".02 1" solimp=".8 .8 .01" material="geom" />
+    <default class="motor">
+      <motor gear="20" />
+    </default>
+  </default>
+  <option timestep="0.002">
+    <flag energy="enable" />
+  </option>
+  <size njmax="1000" nconmax="400" nuser_jnt="1" />
+  <visual>
+    <map fogstart="3" fogend="5" force="0.1" />
+    <quality shadowsize="2048" />
+  </visual>
+  <worldbody>
+    <geom name="floor" pos="0 0 0" size="10 10 0.125" type="plane" material="MatPlane" condim="3" />
+    <body name="pelvis" pos="       0    -0.02 1.22465e-18" quat="0.7071067811865475 0.7071067811865475 0.0 0.0">
+      <light mode="trackcom" directional="false" diffuse=".8 .8 .8" specular="0.3 0.3 0.3" pos="0 0 4.0" dir="0 0 -1" />
+      <geom name="sacrum" type="mesh" mesh="sacrum" />
+      <geom name="pelvis" type="mesh" mesh="pelvis" />
+      <geom name="l_pelvis" type="mesh" mesh="l_pelvis" />
+      <inertial pos=" -0.0707        0        0" mass="11.777" fullinertia="  0.1028   0.0871   0.0579        0        0        0" />
+      <joint name="pelvis_ty" type="slide" pos="0 0 0" axis="       0        1        0" limited="false" range="      -1        2" ref="0" armature="0" damping="0" stiffness="0" />
+      <joint name="pelvis_tx" type="slide" pos="0 0 0" axis="       1        0        0" limited="false" range="      -5        5" ref="0" armature="0" damping="0" stiffness="0" />
+      <joint name="pelvis_tilt" type="hinge" pos="0 0 0" axis="       0        0        1" limited="false" range=" -1.5708   1.5708" ref="0" armature="0" damping="0" stiffness="0" />
+      <body name="femur_r" pos=" -0.0707  -0.0661   0.0835" quat="1.0 0.0 0.0 0.0">
+        <geom name="femur" type="mesh" mesh="femur" />
+        <inertial pos="       0    -0.17        0" mass="9.3014" fullinertia="  0.1339   0.0351   0.1412        0        0        0" />
+        <joint name="hip_flexion_r" type="hinge" pos="0 0 0" axis="       0        0        1" limited="false" range=" -2.0944   2.0944" ref="0" />
+        <body name="tibia_r" pos="       0        0        0" quat="1.0 0.0 0.0 0.0">
+          <geom name="tibia" type="mesh" mesh="tibia" />
+          <geom name="fibula" type="mesh" mesh="fibula" />
+          <inertial pos="       0  -0.1867        0" mass="3.7075" fullinertia="  0.0504   0.0051   0.0511        0        0        0" />
+          <joint name="knee_angle_r_translation2" type="slide" pos="0 0 0" axis="       0        1        0" limited="true" range="-0.422602 -0.395309" ref="0" />
+          <joint name="knee_angle_r_translation1" type="slide" pos="0 0 0" axis="       1        0        0" limited="true" range="-0.00591791 0.00435888" ref="0" />
+          <joint name="knee_angle_r" type="hinge" pos="0 0 0" axis="       0        0        1" limited="false" range=" -2.0944 0.174533" ref="0" />
+          <body name="talus_r" pos="       0    -0.43        0" quat="1.0 0.0 0.0 0.0">
+            <geom name="talus" type="mesh" mesh="talus" />
+            <inertial pos="       0        0        0" mass="0.1" fullinertia="   0.001    0.001    0.001        0        0        0" />
+            <joint name="ankle_angle_r" type="hinge" pos="0 0 0" axis="       0        0        1" limited="false" range=" -1.5708   1.5708" ref="0" />
+            <body name="calcn_r" pos="-0.04877 -0.04195  0.00792" quat="1.0 0.0 0.0 0.0">
+              <geom name="foot" type="mesh" mesh="foot" />
+              <inertial pos="     0.1     0.03        0" mass="1.25" fullinertia="  0.0014   0.0039   0.0041        0        0        0" />
+              <body name="toes_r" pos="  0.1788   -0.002  0.00108" quat="1.0 0.0 0.0 0.0">
+                <geom name="bofoot" type="mesh" mesh="bofoot" />
+                <inertial pos="  0.0346    0.006  -0.0175" mass="0.2166" fullinertia="  0.0001   0.0002   0.0001        0        0        0" />
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="femur_l" pos=" -0.0707  -0.0661  -0.0835" quat="1.0 0.0 0.0 0.0">
+        <geom name="l_femur" type="mesh" mesh="l_femur" />
+        <inertial pos="       0    -0.17        0" mass="9.3014" fullinertia="  0.1339   0.0351   0.1412        0        0        0" />
+        <joint name="hip_flexion_l" type="hinge" pos="0 0 0" axis="       0        0        1" limited="false" range=" -2.0944   2.0944" ref="0" />
+        <body name="tibia_l" pos="       0        0        0" quat="1.0 0.0 0.0 0.0">
+          <geom name="l_tibia" type="mesh" mesh="l_tibia" />
+          <geom name="l_fibula" type="mesh" mesh="l_fibula" />
+          <inertial pos="       0  -0.1867        0" mass="3.7075" fullinertia="  0.0504   0.0051   0.0511        0        0        0" />
+          <joint name="knee_angle_l_translation2" type="slide" pos="0 0 0" axis="       0        1        0" limited="true" range="-0.422602 -0.395309" ref="0" />
+          <joint name="knee_angle_l_translation1" type="slide" pos="0 0 0" axis="       1        0        0" limited="true" range="-0.00591791 0.00435888" ref="0" />
+          <joint name="knee_angle_l" type="hinge" pos="0 0 0" axis="       0        0        1" limited="false" range=" -2.0944 0.174533" ref="0" />
+          <body name="talus_l" pos="       0    -0.43        0" quat="1.0 0.0 0.0 0.0">
+            <geom name="l_talus" type="mesh" mesh="l_talus" />
+            <inertial pos="       0        0        0" mass="0.1" fullinertia="   0.001    0.001    0.001        0        0        0" />
+            <joint name="ankle_angle_l" type="hinge" pos="0 0 0" axis="       0        0        1" limited="false" range=" -1.0472   1.0472" ref="0" />
+            <body name="calcn_l" pos="-0.04877 -0.04195 -0.00792" quat="1.0 0.0 0.0 0.0">
+              <geom name="l_foot" type="mesh" mesh="l_foot" />
+              <inertial pos="     0.1     0.03        0" mass="1.25" fullinertia="  0.0014   0.0039   0.0041        0        0        0" />
+              <body name="toes_l" pos="  0.1788   -0.002 -0.00108" quat="1.0 0.0 0.0 0.0">
+                <geom name="l_bofoot" type="mesh" mesh="l_bofoot" />
+                <inertial pos="  0.0346    0.006   0.0175" mass="0.2166" fullinertia="  0.0001   0.0002   0.0001        0        0        0" />
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="torso" pos=" -0.1007   0.0815        0" quat="1.0 0.0 0.0 0.0">
+        <geom name="hat_spine" type="mesh" mesh="hat_spine" />
+        <geom name="hat_jaw" type="mesh" mesh="hat_jaw" />
+        <geom name="hat_skull" type="mesh" mesh="hat_skull" />
+        <geom name="hat_ribs" type="mesh" mesh="hat_ribs" />
+        <inertial pos="   -0.03     0.32        0" mass="34.2366" fullinertia="  1.4745   0.7555   1.4314        0        0        0" />
+        <joint name="lumbar_extension" type="hinge" pos="0 0 0" axis="       0        0        1" limited="false" range=" -1.5708   1.5708" ref="0" />
+      </body>
+    </body>
+    <camera name="for_testing" pos="0 0 0" euler="0 0 0" />
+  </worldbody>
+  <asset>
+    <mesh name="sacrum" file="Geometry/sacrum.stl" scale="       1        1        1" />
+    <mesh name="pelvis" file="Geometry/pelvis.stl" scale="       1        1        1" />
+    <mesh name="l_pelvis" file="Geometry/l_pelvis.stl" scale="       1        1        1" />
+    <mesh name="femur" file="Geometry/femur.stl" scale="       1        1        1" />
+    <mesh name="tibia" file="Geometry/tibia.stl" scale="       1        1        1" />
+    <mesh name="fibula" file="Geometry/fibula.stl" scale="       1        1        1" />
+    <mesh name="talus" file="Geometry/talus.stl" scale="       1        1        1" />
+    <mesh name="foot" file="Geometry/foot.stl" scale="       1        1        1" />
+    <mesh name="bofoot" file="Geometry/bofoot.stl" scale="       1        1        1" />
+    <mesh name="l_femur" file="Geometry/l_femur.stl" scale="       1        1        1" />
+    <mesh name="l_tibia" file="Geometry/l_tibia.stl" scale="       1        1        1" />
+    <mesh name="l_fibula" file="Geometry/l_fibula.stl" scale="       1        1        1" />
+    <mesh name="l_talus" file="Geometry/l_talus.stl" scale="       1        1        1" />
+    <mesh name="l_foot" file="Geometry/l_foot.stl" scale="       1        1        1" />
+    <mesh name="l_bofoot" file="Geometry/l_bofoot.stl" scale="       1        1        1" />
+    <mesh name="hat_spine" file="Geometry/hat_spine.stl" scale="       1        1        1" />
+    <mesh name="hat_jaw" file="Geometry/hat_jaw.stl" scale="       1        1        1" />
+    <mesh name="hat_skull" file="Geometry/hat_skull.stl" scale="       1        1        1" />
+    <mesh name="hat_ribs" file="Geometry/hat_ribs.stl" scale="       1        1        1" />
+    <texture name="texplane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2" width="100" height="100" />
+    <texture name="texgeom" type="cube" builtin="flat" mark="cross" width="127" height="1278" rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" markrgb="1 1 1" random="0.01" />
+    <material name="MatPlane" reflectance="0.5" texture="texplane" texrepeat="1 1" texuniform="true" />
+    <material name="geom" texture="texgeom" texuniform="true" />
+  </asset>
+  <actuator>
+    <motor name="pelvis_ty" joint="pelvis_ty" class="motor" />
+		<motor name="knee_angle_r_translation1" joint="knee_angle_r_translation1" class="motor" />
+		<motor name="knee_angle_r_translation2" joint="knee_angle_r_translation2" class="motor" />
+		<motor name="knee_angle_l_translation1" joint="knee_angle_l_translation1" class="motor" />
+		<motor name="ankle_angle_r" joint="ankle_angle_r" class="motor" />
+		<motor name="hip_flexion_r" joint="hip_flexion_r" class="motor" />
+		<motor name="ankle_angle_l" joint="ankle_angle_l" class="motor" />
+		<motor name="knee_angle_l" joint="knee_angle_l" class="motor" />
+		<motor name="hip_flexion_l" joint="hip_flexion_l" class="motor" />
+		<motor name="lumbar_extension" joint="lumbar_extension" class="motor" />
+		<motor name="pelvis_tx" joint="pelvis_tx" class="motor" />
+		<motor name="pelvis_tilt" joint="pelvis_tilt" class="motor" />
+		<motor name="knee_angle_r" joint="knee_angle_r" class="motor" />
+		<motor name="knee_angle_l_translation2" joint="knee_angle_l_translation2" class="motor" />
+		</actuator>
+  <equality>
+    <joint name="knee_angle_r_translation2_constraint" active="true" joint1="knee_angle_r_translation2" joint2="knee_angle_r" polycoef="-0.395713 0.00341345 -0.00558653 0.000669664 0.000567409" solimp="0.9999 0.9999 0.001 0.5 2" />
+    <joint name="knee_angle_r_translation1_constraint" active="true" joint1="knee_angle_r_translation1" joint2="knee_angle_r" polycoef="-0.00363925 -0.00626677 0.00280689 0.00134038 -0.000677624" solimp="0.9999 0.9999 0.001 0.5 2" />
+    <joint name="knee_angle_l_translation2_constraint" active="true" joint1="knee_angle_l_translation2" joint2="knee_angle_l" polycoef="-0.395713 0.00341345 -0.00558653 0.000669664 0.000567409" solimp="0.9999 0.9999 0.001 0.5 2" />
+    <joint name="knee_angle_l_translation1_constraint" active="true" joint1="knee_angle_l_translation1" joint2="knee_angle_l" polycoef="-0.00363925 -0.00626677 0.00280689 0.00134038 -0.000677624" solimp="0.9999 0.9999 0.001 0.5 2" />
+    <weld name="origin_to_worldbody" body1="pelvis" active="false" />
+  </equality>
+</mujoco>
