@@ -1,6 +1,7 @@
 data/
 data/converted/
 data/opensim/
+deprecated/
 
 /__pycache__
 /tests/__pycache__
