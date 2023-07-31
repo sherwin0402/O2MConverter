@@ -1,5 +1,7 @@
-/RRIS/sandbox
-/RRIS/data
+data/
+data/converted/
+data/opensim/
+
 /__pycache__
 /tests/__pycache__
 .vscode
