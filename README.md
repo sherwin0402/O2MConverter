@@ -1,25 +1,23 @@
 # RRIS_O2MConverter
-## To do:
-1. Set joint limits to be true once converted from MSK
-2. Remove unecessary joints, bodies and information during simplification process
-3. Make actuator limits to be in line with joint limits
-4. Set order of actuators to be the same as joints
-5. Duplicate the model using torque actuation
+This repository is forked from Aikkala's original [O2M](https://github.com/aikkala/O2MConverter). It is modified to work with the RRIS model and motion files.
 
 ## Install
-```bash
-# Clone this repository
-conda env create --name O2M --file=conda_env.yml
-```
+0. Download the pre-requisites
+    - MuJoCo 2.1.2 [Github Release](https://github.com/deepmind/mujoco/releases/tag/2.1.2) and place MuJoCo 2.1.2 downloaded binaries to ~/.mujoco/mujoco-2.1.2
+    
+1. Clone this repository
+2. Create conda environment
+    ```bash 
+    conda env create --name O2M --file=conda_env.yml
+    ```
 ## How to Use : Converting Model
-OSIM -> MJCF (MSK)
+Convert OpenSim model file of .osim to MuJoCo model file of .xml
+
+Geom Files are of .vtp version as per OpenSim type. They will be converted to .stl files for MuJoCo in this process
 ```bash
 conda activate O2M
-export MJLIB_PATH=/home/sherwin/.mujoco/mujoco-2.1.1/lib/libmujoco.so.2.1.1
-conda env export | grep -v "^prefix: " > environment.yml
 
-# python O2MConverter.py <OSIM_FILE> <LOCATION_TO_SAVE> <LOCATION_WHERE_GEOM_FILES_ARE>
-python O2MConverter.py RRIS/data/Sample_Subject/Opensim_Output/SN475/SN475_Rajagopal_scaled.osim RRIS/data/Sample_Subject/Converted RRIS/data/osim_models/Rajagopal2015/Geometry
+# python O2MConverter.py <OSIM_FILE_PATH> <FOLDER_LOCATION_TO_SAVE> <LOCATION_WHERE_GEOM_FILES_ARE>
 ```
 
 MJCF (MSK -> SK)
@@ -29,9 +27,9 @@ MJCF (MSK -> SK)
 
 ```bash
 conda activate O2M
-export MJLIB_PATH=/home/sherwin/.mujoco/mujoco-2.1.1/lib/libmujoco.so.2.1.1
 cd scripts
 # Note: Add the intended MJCF MSK file to be edited here
+# export MJLIB_PATH=/home/USERNAME/.mujoco/mujoco-2.1.1/lib/libmujoco.so.2.1.1
 python rmvMuscles.py
 ```
 
@@ -98,3 +96,15 @@ python optimize_mujoco_parameters.py gait10dof18musc
 # Step 8 - Load optimized parameters
 
 ```
+
+### Other useful commands
+```bash
+conda env export | grep -v "^prefix: " > environment.yml
+```
+
+## To do:
+1. Set joint limits to be true once converted from MSK
+2. Remove unecessary joints, bodies and information during simplification process
+3. Make actuator limits to be in line with joint limits
+4. Set order of actuators to be the same as joints
+5. Duplicate the model using torque actuation
